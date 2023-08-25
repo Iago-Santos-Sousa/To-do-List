@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -54,6 +58,7 @@ main {
   cursor: pointer;
   background-color: #ff9494;
   color: #ffffff;
+  font-size: 1.2rem;
   padding: 0.5rem;
 }
 
