@@ -12,8 +12,8 @@ const useTasksList = (): UseTaskListType => {
   const [openModal, setOpenModal] = useState(false);
 
   const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
-  console.log("lista com a tarefas", taskList);
-  console.log("lista com a tarefas atualizadas", taskToUpdate);
+  // console.log("lista com a tarefas", taskList);
+  // console.log("lista com a tarefas atualizadas", taskToUpdate);
 
   const handleDeleteTask = (title: string): void => {
     // deleta uma tarefa

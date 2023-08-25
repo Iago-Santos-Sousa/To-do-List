@@ -1,5 +1,5 @@
-import { ModalType } from "../types/MyTypes";
-import styles from "./componentsStyles/Modal.module.css";
+import { ModalType } from "../../types/MyTypes";
+import styles from "./Modal.module.css";
 
 const Modal = ({ children, title, openModal, setOpenModal }: ModalType) => {
   // const closeModal = (): void => {
@@ -12,7 +12,7 @@ const Modal = ({ children, title, openModal, setOpenModal }: ModalType) => {
   }
 
   return (
-    <div id="modal" className="hide">
+    <div id="modal" className="">
       <div className={styles.backgroundStyle} onClick={() => setOpenModal(false)}></div>
       <div className={styles.modalStyle}>
         <div style={{ cursor: "pointer" }} onClick={() => setOpenModal(false)}>

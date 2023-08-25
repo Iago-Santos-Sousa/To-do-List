@@ -23,3 +23,7 @@ export type ModalType = {
   openModal: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export type HandleType = {
+  updateTask: () => void;
+};

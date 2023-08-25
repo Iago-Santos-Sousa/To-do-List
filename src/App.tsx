@@ -1,6 +1,6 @@
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
-import Modal from "./components/Modal";
+import Modal from "./components/modal/Modal";
 import useTasksList from "./hooks/useTasksList";
 
 function App() {
@@ -31,19 +31,19 @@ function App() {
         }
       />
       <main>
-        <div className="form-container">
-          <h1>Adicione a sua tarefa</h1>
-          <TaskForm btnText="Cadastrar" taskList={taskList} setTaskList={setTaskList} />
-        </div>
+        <>
+          <TaskForm btnText="Adicionar" taskList={taskList} setTaskList={setTaskList} />
+        </>
 
-        <div className="list-container">
-          <h2>Suas tarefas:</h2>
-          <TaskList
-            taskList={taskList}
-            handleDeleteTask={handleDeleteTask}
-            handleEditTask={handleEditTask}
-          />
-        </div>
+        {taskList.length > 0 && (
+          <div className="list-container">
+            <TaskList
+              taskList={taskList}
+              handleDeleteTask={handleDeleteTask}
+              handleEditTask={handleEditTask}
+            />
+          </div>
+        )}
       </main>
     </div>
   );

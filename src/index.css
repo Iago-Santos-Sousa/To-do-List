@@ -1,58 +1,139 @@
-body * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
 body {
   height: 100vh;
+  background: #066acd;
 }
 
 #root {
   height: 100%;
-  width: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
 }
 
 .App {
+  min-width: 450px;
+  min-height: 100px;
+  border-radius: 1rem;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
 }
 
 #modal {
 }
 
 main {
-  height: 100%;
-  background-color: aqua;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .form-container {
-}
-
-h1 {
-  text-align: center;
+  width: 100%;
 }
 
 .form-container form {
   display: flex;
   justify-content: center;
+  gap: 0.8rem;
+}
+
+.form-container p {
+  width: 50%;
+  margin: 1rem auto 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ff9494;
+  cursor: pointer;
+  background-color: #ff9494;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+.form-container form div {
+  width: 60%;
+}
+
+.task-input {
+  width: 100%;
+  height: 45px;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #0d75ec;
+}
+
+button {
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #0d75ec;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5rem;
+  height: 45px;
+  border-radius: 5px;
 }
 
 .list-container {
-}
-
-h2,
-p {
-  text-align: center;
-}
-
-.list-container .tasks-container {
+  width: 100%;
+  padding-top: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-/* .hide {
-  display: none !important;
-} */
+.tasks-container {
+  width: 368px;
+  border-radius: 5px;
+  border: 1px solid #939697;
+  cursor: pointer;
+  background-color: #c5e1e6;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details {
+  width: 82%;
+}
+
+.details span {
+  width: 100%;
+  word-break: break-all;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  background-color: #0a2ea4;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.actions i:first-child {
+  /* transform: rotate(-44deg); */
+}
