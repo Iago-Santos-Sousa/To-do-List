@@ -1,9 +1,11 @@
-const TaskList = ({ taskList, handleDeleteTask, handleEditTask }) => {
+import { TaskListType } from "../types/MyTypes";
+
+const TaskList = ({ taskList, handleDeleteTask, handleEditTask }: TaskListType) => {
   return (
     <>
       {taskList.length > 0 ? (
         taskList.map((task, index) => (
-          <div key={index} className="">
+          <div key={index} className="tasks-container">
             <div className="details">
               <h4>{task.title}</h4>
             </div>

@@ -1,14 +1,26 @@
-const Modal = ({ children, title }) => {
-  const closeModal = (): void => {
-    const modal = document.getElementById("modal");
-    modal!.classList.add("hide");
-  };
+import { ModalType } from "../types/MyTypes";
+import styles from "./componentsStyles/Modal.module.css";
+
+const Modal = ({ children, title, openModal, setOpenModal }: ModalType) => {
+  // const closeModal = (): void => {
+  //   const modal = document.getElementById("modal");
+  //   modal!.classList.add("hide");
+  // };
+
+  if (!openModal) {
+    return;
+  }
+
   return (
     <div id="modal" className="hide">
-      <div className="" onClick={closeModal}></div>
-      <div className="">
+      <div className={styles.backgroundStyle} onClick={() => setOpenModal(false)}></div>
+      <div className={styles.modalStyle}>
+        <div style={{ cursor: "pointer" }} onClick={() => setOpenModal(false)}>
+          x
+        </div>
         <h2>{title}</h2>
-        {children}
+        <div>{children}</div>
+        <button onClick={() => setOpenModal(false)}>Fechar</button>
       </div>
     </div>
   );

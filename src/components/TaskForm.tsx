@@ -1,9 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { ITask } from "../interfaces/Task";
+import { TaskFormType } from "../interfaces/TaskFormType";
 
-const TaskForm = ({ btnText, taskList, setTaskList, taskToUpdate, handleUpdateTask }) => {
+const TaskForm = ({
+  btnText,
+  taskList,
+  setTaskList,
+  taskToUpdate,
+  handleUpdateTask,
+}: TaskFormType): JSX.Element => {
   const [id, setId] = useState<number>(0);
   const [title, setTitle] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   useEffect(() => {
     // quando existir uma tarefa para atualizar
@@ -13,19 +21,25 @@ const TaskForm = ({ btnText, taskList, setTaskList, taskToUpdate, handleUpdateTa
     }
   }, [taskToUpdate]);
 
-  const addTaskHandler = (e) => {
+  const addTaskHandler = (e: FormEvent<HTMLFormElement>): void => {
     // Adiciona tarefa
     e.preventDefault();
 
     if (taskList) {
+      // altera tarefa
       if (handleUpdateTask) {
         handleUpdateTask(id, title);
       } else {
-        const id = Math.floor(Math.random() * 1000);
+        if (title.trim() === "") {
+          // verifica se o input está vazio
+          setErrorMessage("O campo não pode estar vazio");
+          return;
+        }
+        // Adiciona tarefa
+        const id: number = Math.floor(Math.random() * 1000);
         const newTask: ITask = { id, title };
-        // setTaskList!([...taskList, newTask]);
-        setTaskList!(() => {
-          const newState = [...taskList, newTask];
+        setTaskList!((prev) => {
+          const newState: ITask[] = [...prev, newTask];
           localStorage.setItem("tasks-list", JSON.stringify(newState));
           return newState;
         });
@@ -33,26 +47,19 @@ const TaskForm = ({ btnText, taskList, setTaskList, taskToUpdate, handleUpdateTa
     }
   };
 
-  // const handleChange = (e) => {
-  //   // Seta a tarefa no title
-  //   if (e.target.name === "title") {
-  //     setTitle(e.target.value);
-  //   }
-  // };
-
   return (
     <form onSubmit={addTaskHandler}>
       <div className="">
-        <label htmlFor="title">Título:</label>
         <input
           type="text"
           name="title"
           id=""
           placeholder="Título da tarefa"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
         />
       </div>
+      {errorMessage && <p>{errorMessage}</p>}
       <input type="submit" value={btnText} />
     </form>
   );

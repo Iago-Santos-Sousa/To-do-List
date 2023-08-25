@@ -1,9 +1,58 @@
-* {
+body * {
   padding: 0;
   margin: 0;
-  font-family: Helvetica;
+  box-sizing: border-box;
+  border: 1px solid red;
 }
 
-.hide {
-  display: none !important;
+body {
+  height: 100vh;
 }
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.App {
+}
+
+#modal {
+}
+
+main {
+  height: 100%;
+  background-color: aqua;
+}
+
+.form-container {
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  justify-content: center;
+}
+
+.list-container {
+}
+
+h2,
+p {
+  text-align: center;
+}
+
+.list-container .tasks-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* .hide {
+  display: none !important;
+} */
