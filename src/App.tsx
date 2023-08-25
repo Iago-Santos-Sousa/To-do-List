@@ -18,7 +18,6 @@ function App() {
   return (
     <div className="App">
       <Modal
-        title="Editar tarefa"
         openModal={openModal}
         setOpenModal={setOpenModal}
         children={

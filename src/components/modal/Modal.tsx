@@ -1,12 +1,7 @@
 import { ModalType } from "../../types/MyTypes";
 import styles from "./Modal.module.css";
 
-const Modal = ({ children, title, openModal, setOpenModal }: ModalType) => {
-  // const closeModal = (): void => {
-  //   const modal = document.getElementById("modal");
-  //   modal!.classList.add("hide");
-  // };
-
+const Modal = ({ children, openModal, setOpenModal }: ModalType): JSX.Element | undefined => {
   if (!openModal) {
     return;
   }
@@ -15,12 +10,13 @@ const Modal = ({ children, title, openModal, setOpenModal }: ModalType) => {
     <div id="modal" className="">
       <div className={styles.backgroundStyle} onClick={() => setOpenModal(false)}></div>
       <div className={styles.modalStyle}>
-        <div style={{ cursor: "pointer" }} onClick={() => setOpenModal(false)}>
-          x
-        </div>
-        <h2>{title}</h2>
-        <div>{children}</div>
-        <button onClick={() => setOpenModal(false)}>Fechar</button>
+        {children}
+        <button
+          style={{ display: "block", margin: "1.5rem auto 0" }}
+          onClick={() => setOpenModal(false)}
+        >
+          Fechar
+        </button>
       </div>
     </div>
   );

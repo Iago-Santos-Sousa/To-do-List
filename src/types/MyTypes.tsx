@@ -19,7 +19,6 @@ export type TaskListType = {
 
 export type ModalType = {
   children: React.ReactNode;
-  title: string;
   openModal: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };

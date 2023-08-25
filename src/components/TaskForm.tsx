@@ -71,7 +71,7 @@ const TaskForm = ({
             className="task-input"
             type="text"
             name="title"
-            placeholder="Tarefa"
+            placeholder="Sua tarefa"
             value={title}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           />
