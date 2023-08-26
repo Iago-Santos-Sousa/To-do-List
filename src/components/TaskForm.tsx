@@ -9,10 +9,11 @@ const TaskForm = ({
   setTaskList,
   taskToUpdate,
   handleUpdateTask,
+  errorMessage,
+  setErrorMessage,
 }: TaskFormType): JSX.Element => {
   const [idTask, setId] = useState<number>(0);
   const [title, setTitle] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
   // console.log({ title });
   // console.log(typeof setTaskList);
 
@@ -39,12 +40,12 @@ const TaskForm = ({
     if (taskList) {
       if (title.trim() === "") {
         // verifica se o input esta vazio
-        setErrorMessage("Insira uma tarefa!");
+        setErrorMessage!("Insira uma tarefa!");
         return;
       }
       handlers.updateTask();
       setTitle("");
-      setErrorMessage("");
+      setErrorMessage!("");
     }
 
     // Adiciona tarefa
@@ -60,7 +61,7 @@ const TaskForm = ({
     } else {
       return;
     }
-    setErrorMessage("");
+    setErrorMessage!("");
   };
 
   return (
@@ -78,7 +79,7 @@ const TaskForm = ({
         </div>
         <button type="submit">{btnText}</button>
       </form>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && errorMessage !== undefined && <p>{errorMessage}</p>}
     </div>
   );
 };

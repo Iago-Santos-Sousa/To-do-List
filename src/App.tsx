@@ -13,6 +13,8 @@ function App() {
     handleUpdateTask,
     openModal,
     setOpenModal,
+    errorMessage,
+    setErrorMessage,
   } = useTasksList();
 
   return (
@@ -26,6 +28,8 @@ function App() {
             taskList={taskList}
             taskToUpdate={taskToUpdate}
             handleUpdateTask={handleUpdateTask}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
           />
         }
       />
