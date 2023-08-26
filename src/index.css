@@ -11,15 +11,16 @@ body {
 
 #root {
   height: 100%;
-  width: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
 }
 
 .App {
-  width: min(95vw, 500px);
+  min-width: 450px;
+  min-height: 100px;
   border-radius: 1rem;
+  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,10 +40,8 @@ main {
 }
 
 .form-container form {
-  margin: 0 auto;
-  width: 85%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0.8rem;
 }
 
@@ -55,6 +54,10 @@ main {
   cursor: pointer;
   background-color: #ff9494;
   color: #ffffff;
+<<<<<<< HEAD
+=======
+  font-size: 1.2rem;
+>>>>>>> parent of 6cae434 (cm-09)
   padding: 0.5rem;
 }
 
