@@ -1,7 +1,6 @@
 import { TaskListType } from "../types/MyTypes";
 import { BsTrash } from "react-icons/bs";
 import { BsPencil } from "react-icons/bs";
-import styles from "../assets/styles/Tolltip.module.css";
 
 const TaskList = ({ taskList, handleDeleteTask, handleEditTask }: TaskListType) => {
   return (
@@ -13,18 +12,12 @@ const TaskList = ({ taskList, handleDeleteTask, handleEditTask }: TaskListType) 
                 <span>{task.title}</span>
               </div>
               <div className="actions">
-                <span className={styles.tooltip}>
-                  <i onClick={() => handleEditTask(task)}>
-                    <span className={styles.tooltiptext}>Editar</span>
-                    <BsPencil />
-                  </i>
-                </span>
-                <span className={styles.tooltip}>
-                  <i onClick={() => handleDeleteTask(task.title)}>
-                    <span className={styles.tooltiptext}>Excluir</span>
-                    <BsTrash />
-                  </i>
-                </span>
+                <i onClick={() => handleEditTask(task)}>
+                  <BsPencil />
+                </i>
+                <i onClick={() => handleDeleteTask(task.title)}>
+                  <BsTrash />
+                </i>
               </div>
             </div>
           ))
