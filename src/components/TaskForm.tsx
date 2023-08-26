@@ -21,7 +21,6 @@ const TaskForm = ({
       // altera tarefa
       if (handleUpdateTask) {
         handleUpdateTask(idTask, title);
-        setErrorMessage("");
       }
     },
   };

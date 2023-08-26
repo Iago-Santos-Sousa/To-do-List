@@ -22,7 +22,6 @@ body {
 
 .App {
   min-width: 450px;
-  min-height: 100px;
   border-radius: 1rem;
   background-color: aqua;
   display: flex;
