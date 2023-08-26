@@ -9,6 +9,8 @@ export type UseTaskListType = {
   handleUpdateTask: (id: number, title: string) => void;
   openModal: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  errorMessage: string;
+  setErrorMessage: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type TaskListType = {

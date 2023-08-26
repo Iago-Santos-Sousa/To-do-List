@@ -9,10 +9,11 @@ const TaskForm = ({
   setTaskList,
   taskToUpdate,
   handleUpdateTask,
+  errorMessage,
+  setErrorMessage,
 }: TaskFormType): JSX.Element => {
   const [idTask, setId] = useState<number>(0);
   const [title, setTitle] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
   // console.log({ title });
   // console.log(typeof setTaskList);
 
@@ -46,7 +47,7 @@ const TaskForm = ({
       }
       handlers.updateTask();
       setTitle("");
-      setErrorMessage("");
+      setErrorMessage!("");
     }
 
     // Adiciona tarefa
@@ -62,7 +63,7 @@ const TaskForm = ({
     } else {
       return;
     }
-    setErrorMessage("");
+    setErrorMessage!("");
   };
 
   return (
@@ -80,7 +81,7 @@ const TaskForm = ({
         </div>
         <button type="submit">{btnText}</button>
       </form>
-      {errorMessage ? <p>{errorMessage}</p> : null}
+      {errorMessage && errorMessage !== undefined && <p>{errorMessage}</p>}
     </div>
   );
 };
