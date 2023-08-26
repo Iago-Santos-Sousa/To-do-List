@@ -39,7 +39,11 @@ const TaskForm = ({
     if (taskList) {
       if (title.trim() === "") {
         // verifica se o input esta vazio
+<<<<<<< HEAD
         setErrorMessage!("Insira uma tarefa!");
+=======
+        setErrorMessage("O campo não pode estar vazio");
+>>>>>>> parent of cd1d13a (cm-08)
         return;
       }
       handlers.updateTask();
@@ -66,7 +70,7 @@ const TaskForm = ({
   return (
     <div className="form-container" id="form-tasks">
       <form onSubmit={addTaskHandler}>
-        <div>
+        <div className="">
           <input
             className="task-input"
             type="text"
