@@ -39,10 +39,9 @@ const TaskForm = ({
     if (taskList) {
       if (title.trim() === "") {
         // verifica se o input esta vazio
-<<<<<<< HEAD
-=======
+
         setErrorMessage("O campo não pode estar vazio");
->>>>>>> parent of cd1d13a (cm-08)
+
         return;
       }
       handlers.updateTask();
