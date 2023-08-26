@@ -9,11 +9,11 @@ const TaskForm = ({
   setTaskList,
   taskToUpdate,
   handleUpdateTask,
-  idTask,
-  setId,
 }: TaskFormType): JSX.Element => {
   const [title, setTitle] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [idTask, setId] = useState<number>(0);
+
   // console.log({ title });
   // console.log(typeof setTaskList);
 
@@ -21,7 +21,7 @@ const TaskForm = ({
     updateTask: () => {
       // altera tarefa
       if (handleUpdateTask) {
-        handleUpdateTask(idTask!, title);
+        handleUpdateTask(idTask, title);
       }
     },
   };
@@ -29,7 +29,7 @@ const TaskForm = ({
   useEffect(() => {
     // quando existir uma tarefa para atualizar
     if (taskToUpdate) {
-      setId!(taskToUpdate.id);
+      setId(taskToUpdate.id);
       setTitle(taskToUpdate.title);
     }
   }, [taskToUpdate]);
@@ -40,9 +40,7 @@ const TaskForm = ({
     if (taskList) {
       if (title.trim() === "") {
         // verifica se o input esta vazio
-
         setErrorMessage("O campo não pode estar vazio");
-
         return;
       }
       handlers.updateTask();

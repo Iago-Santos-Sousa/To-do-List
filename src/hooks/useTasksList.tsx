@@ -9,13 +9,8 @@ const useTasksList = (): UseTaskListType => {
     return JSON.parse(storedTask);
   });
 
-  const [idTask, setId] = useState<number>(0);
-
   const [openModal, setOpenModal] = useState(false);
-
   const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
-  // console.log("lista com a tarefas", taskList);
-  // console.log("lista com a tarefas atualizadas", taskToUpdate);
 
   const handleDeleteTask = (id: number): void => {
     // deleta uma tarefa
@@ -26,19 +21,8 @@ const useTasksList = (): UseTaskListType => {
     });
   };
 
-  // const hideOrShowModal = (display: boolean): void => {
-  //   // Mostra o Modal
-  //   const modal: HTMLElement | null = document.getElementById("modal");
-  //   if (display) {
-  //     modal!.classList.remove("hide");
-  //   } else {
-  //     modal!.classList.add("hide");
-  //   }
-  // };
-
   const handleEditTask = (task: ITask): void => {
     // abre o modal e edita a tarefa específica da lista
-    // hideOrShowModal(true);
     setOpenModal(true);
     setTaskToUpdate(task);
   };
@@ -58,8 +42,6 @@ const useTasksList = (): UseTaskListType => {
       localStorage.setItem("tasks-list", JSON.stringify(updatedItems));
       return updatedItems;
     });
-
-    // hideOrShowModal(false);
     setOpenModal(false);
   };
 
@@ -72,8 +54,6 @@ const useTasksList = (): UseTaskListType => {
     handleUpdateTask,
     openModal,
     setOpenModal,
-    idTask,
-    setId,
   };
 };
 
