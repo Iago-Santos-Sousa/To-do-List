@@ -20,7 +20,7 @@ const TaskList = ({ taskList, handleDeleteTask, handleEditTask }: TaskListType) 
                   </i>
                 </span>
                 <span className={styles.tooltip}>
-                  <i onClick={() => handleDeleteTask(task.title)}>
+                  <i onClick={() => handleDeleteTask(task.id)}>
                     <span className={styles.tooltiptext}>Excluir</span>
                     <BsTrash />
                   </i>

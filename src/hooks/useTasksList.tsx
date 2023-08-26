@@ -9,16 +9,18 @@ const useTasksList = (): UseTaskListType => {
     return JSON.parse(storedTask);
   });
 
+  const [idTask, setId] = useState<number>(0);
+
   const [openModal, setOpenModal] = useState(false);
 
   const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
   // console.log("lista com a tarefas", taskList);
   // console.log("lista com a tarefas atualizadas", taskToUpdate);
 
-  const handleDeleteTask = (title: string): void => {
+  const handleDeleteTask = (id: number): void => {
     // deleta uma tarefa
     setTaskList((prev) => {
-      const newState: ITask[] = prev.filter((task) => task.title !== title);
+      const newState: ITask[] = prev.filter((task) => task.id !== id);
       localStorage.setItem("tasks-list", JSON.stringify(newState));
       return newState;
     });
@@ -70,6 +72,8 @@ const useTasksList = (): UseTaskListType => {
     handleUpdateTask,
     openModal,
     setOpenModal,
+    idTask,
+    setId,
   };
 };
 
