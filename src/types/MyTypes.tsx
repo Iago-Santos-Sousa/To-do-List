@@ -4,16 +4,18 @@ export type UseTaskListType = {
   taskList: ITask[];
   setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>;
   taskToUpdate: ITask | null;
-  handleDeleteTask: (title: string) => void;
+  handleDeleteTask: (title: number) => void;
   handleEditTask: (task: ITask) => void;
   handleUpdateTask: (id: number, title: string) => void;
   openModal: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  idTask: number;
+  setId: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export type TaskListType = {
   taskList: ITask[];
-  handleDeleteTask: (title: string) => void;
+  handleDeleteTask: (title: number) => void;
   handleEditTask: (task: ITask) => void;
 };
 

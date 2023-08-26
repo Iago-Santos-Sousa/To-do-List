@@ -6,4 +6,6 @@ export interface TaskFormType {
   setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>;
   taskToUpdate?: ITask | null;
   handleUpdateTask?: (id: number, title: string) => void;
+  idTask?: number;
+  setId?: React.Dispatch<React.SetStateAction<number>>;
 }

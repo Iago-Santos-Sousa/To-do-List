@@ -12,9 +12,9 @@ body {
 #root {
   height: 100%;
   width: 100%;
-  /* display: grid;
+  display: grid;
   justify-content: center;
-  align-content: center; */
+  align-content: center;
 }
 
 .App {
@@ -23,25 +23,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff; */
+  background-color: #ffffff;
 }
 
 #modal {
 }
 
 main {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(95vw, 500px);
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-
-  /* width: 100%; */
+  width: 100%;
   padding: 1rem 0;
 }
 

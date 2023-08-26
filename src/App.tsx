@@ -13,6 +13,8 @@ function App() {
     handleUpdateTask,
     openModal,
     setOpenModal,
+    idTask,
+    setId,
   } = useTasksList();
 
   return (
@@ -31,18 +33,24 @@ function App() {
       />
       <main>
         <>
-          <TaskForm btnText="Adicionar" taskList={taskList} setTaskList={setTaskList} />
-        </>
-      </main>
-      {taskList.length > 0 && (
-        <div className="list-container">
-          <TaskList
+          <TaskForm
+            btnText="Adicionar"
             taskList={taskList}
-            handleDeleteTask={handleDeleteTask}
-            handleEditTask={handleEditTask}
+            setTaskList={setTaskList}
+            idTask={idTask}
+            setId={setId}
           />
-        </div>
-      )}
+        </>
+        {taskList.length > 0 && (
+          <div className="list-container">
+            <TaskList
+              taskList={taskList}
+              handleDeleteTask={handleDeleteTask}
+              handleEditTask={handleEditTask}
+            />
+          </div>
+        )}
+      </main>
     </div>
   );
 }

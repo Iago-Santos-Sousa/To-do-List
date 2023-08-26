@@ -9,8 +9,9 @@ const TaskForm = ({
   setTaskList,
   taskToUpdate,
   handleUpdateTask,
+  idTask,
+  setId,
 }: TaskFormType): JSX.Element => {
-  const [idTask, setId] = useState<number>(0);
   const [title, setTitle] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   // console.log({ title });
@@ -20,7 +21,7 @@ const TaskForm = ({
     updateTask: () => {
       // altera tarefa
       if (handleUpdateTask) {
-        handleUpdateTask(idTask, title);
+        handleUpdateTask(idTask!, title);
       }
     },
   };
@@ -28,7 +29,7 @@ const TaskForm = ({
   useEffect(() => {
     // quando existir uma tarefa para atualizar
     if (taskToUpdate) {
-      setId(taskToUpdate.id);
+      setId!(taskToUpdate.id);
       setTitle(taskToUpdate.title);
     }
   }, [taskToUpdate]);
