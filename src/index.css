@@ -15,16 +15,15 @@ body {
 
 #root {
   height: 100%;
+  width: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
 }
 
 .App {
-  min-width: 450px;
-  min-height: 100px;
+  width: min(95vw, 500px);
   border-radius: 1rem;
-  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,8 +43,10 @@ main {
 }
 
 .form-container form {
+  margin: 0 auto;
+  width: 85%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.8rem;
 }
 
