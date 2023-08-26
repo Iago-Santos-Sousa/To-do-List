@@ -22,6 +22,10 @@ body {
 
 .App {
   min-width: 450px;
+<<<<<<< HEAD
+=======
+  min-height: 100px;
+>>>>>>> parent of 6cae434 (cm-09)
   border-radius: 1rem;
   background-color: aqua;
   display: flex;
