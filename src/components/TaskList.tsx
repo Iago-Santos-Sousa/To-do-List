@@ -12,14 +12,15 @@ const TaskList = ({
   handleDeleteTask,
   handleEditTask,
 }: TaskListType) => {
-  const [selectedTask, setSelectedItems] = useState<ITask[]>([]);
+  const [selectedTask, setSelectedTask] = useState<ITask[]>([]);
   console.log(selectedTask);
 
   const toogleCheckboxIcon = (task: ITask): void => {
+    // toogle de marcar checkbox ícone
     if (selectedTask.includes(task)) {
-      setSelectedItems(selectedTask.filter((selected) => selected !== task));
+      setSelectedTask(selectedTask.filter((selected) => selected !== task));
     } else {
-      setSelectedItems([...selectedTask, task]);
+      setSelectedTask([...selectedTask, task]);
     }
   };
 

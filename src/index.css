@@ -144,14 +144,6 @@ button {
   word-break: break-all;
 }
 
-.line-through-checked {
-  text-decoration: line-through;
-}
-
-.not-line-through {
-  text-decoration: none;
-}
-
 .actions {
   display: flex;
   justify-content: space-between;
