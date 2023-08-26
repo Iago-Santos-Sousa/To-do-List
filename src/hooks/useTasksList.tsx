@@ -10,7 +10,6 @@ const useTasksList = (): UseTaskListType => {
   });
 
   const [openModal, setOpenModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
   // console.log("lista com a tarefas", taskList);
@@ -60,7 +59,6 @@ const useTasksList = (): UseTaskListType => {
 
     // hideOrShowModal(false);
     setOpenModal(false);
-    setErrorMessage("");
   };
 
   return {
@@ -72,8 +70,6 @@ const useTasksList = (): UseTaskListType => {
     handleUpdateTask,
     openModal,
     setOpenModal,
-    errorMessage,
-    setErrorMessage,
   };
 };
 

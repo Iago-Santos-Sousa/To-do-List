@@ -9,11 +9,10 @@ const TaskForm = ({
   setTaskList,
   taskToUpdate,
   handleUpdateTask,
-  errorMessage,
-  setErrorMessage,
 }: TaskFormType): JSX.Element => {
   const [idTask, setId] = useState<number>(0);
   const [title, setTitle] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   // console.log({ title });
   // console.log(typeof setTaskList);
 
