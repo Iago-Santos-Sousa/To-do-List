@@ -16,27 +16,39 @@ body {
 #root {
   height: 100%;
   width: 100%;
-  display: grid;
+  /* display: grid;
   justify-content: center;
-  align-content: center;
+  align-content: center; */
 }
 
 .App {
-  width: min(95vw, 500px);
-  /* max-height: 500px; */
-  /* overflow-y: scroll; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  /* width: min(95vw, 500px);
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #ffffff; */
 }
 
 #modal {
 }
 
 main {
-  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(95vw, 500px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+
+  /* width: 100%; */
   padding: 1rem 0;
 }
 

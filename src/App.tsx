@@ -41,17 +41,16 @@ function App() {
             setId={setId}
           />
         </>
-
-        {taskList.length > 0 && (
-          <div className="list-container">
-            <TaskList
-              taskList={taskList}
-              handleDeleteTask={handleDeleteTask}
-              handleEditTask={handleEditTask}
-            />
-          </div>
-        )}
       </main>
+      {taskList.length > 0 && (
+        <div className="list-container">
+          <TaskList
+            taskList={taskList}
+            handleDeleteTask={handleDeleteTask}
+            handleEditTask={handleEditTask}
+          />
+        </div>
+      )}
     </div>
   );
 }
