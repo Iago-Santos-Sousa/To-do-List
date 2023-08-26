@@ -17,10 +17,8 @@ body {
 }
 
 .App {
-  min-width: 450px;
-  min-height: 100px;
+  width: min(95vw, 500px);
   border-radius: 1rem;
-  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
