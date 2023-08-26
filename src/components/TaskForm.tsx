@@ -40,7 +40,6 @@ const TaskForm = ({
       if (title.trim() === "") {
         // verifica se o input esta vazio
 <<<<<<< HEAD
-        setErrorMessage!("Insira uma tarefa!");
 =======
         setErrorMessage("O campo não pode estar vazio");
 >>>>>>> parent of cd1d13a (cm-08)
