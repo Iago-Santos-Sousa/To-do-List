@@ -18,14 +18,10 @@ body {
 }
 
 .App {
-<<<<<<< HEAD
   height: 100%;
   width: 100%;
   position: relative;
   /* width: min(95vw, 500px);
-=======
-  width: min(95vw, 500px);
->>>>>>> parent of a031d40 (cm-13)
   border-radius: 1rem;
   display: flex;
   justify-content: center;
