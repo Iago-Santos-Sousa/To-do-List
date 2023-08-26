@@ -45,6 +45,19 @@ main {
   gap: 0.8rem;
 }
 
+.form-container p {
+  width: 50%;
+  margin: 1rem auto 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ff9494;
+  cursor: pointer;
+  background-color: #ff9494;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
 .form-container form div {
   width: 60%;
 }
