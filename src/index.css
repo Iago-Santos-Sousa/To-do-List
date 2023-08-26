@@ -11,6 +11,7 @@ body {
 
 #root {
   height: 100%;
+  width: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -38,26 +39,15 @@ main {
 }
 
 .form-container form {
+  margin: 0 auto;
+  width: 85%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.8rem;
 }
 
-.form-container p {
-  width: 50%;
-  margin: 1rem auto 0;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid #ff9494;
-  cursor: pointer;
-  background-color: #ff9494;
-  color: #ffffff;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-}
-
 .form-container form div {
-  width: 60%;
+  width: 100%;
 }
 
 .task-input {
@@ -89,9 +79,23 @@ button {
   border-radius: 5px;
 }
 
+.form-container p {
+  width: 50%;
+  margin: 1rem auto 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ff9494;
+  cursor: pointer;
+  background-color: #ff9494;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
 .list-container {
-  width: 100%;
-  padding-top: 2rem;
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +103,7 @@ button {
 }
 
 .tasks-container {
-  width: 368px;
+  width: 100%;
   border-radius: 5px;
   border: 1px solid #939697;
   cursor: pointer;
@@ -112,7 +116,7 @@ button {
 }
 
 .details {
-  width: 82%;
+  width: 75%;
 }
 
 .details span {
@@ -131,8 +135,4 @@ button {
   outline: none;
   border-radius: 5px;
   padding: 0.5rem;
-}
-
-.actions i:first-child {
-  /* transform: rotate(-44deg); */
 }
