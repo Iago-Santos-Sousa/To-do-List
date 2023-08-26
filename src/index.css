@@ -85,13 +85,13 @@ button {
 .form-container p {
   width: 50%;
   margin: 1rem auto 0;
-  text-align: center;
+  text-align: justify;
   border-radius: 5px;
   border: 1px solid #ff9494;
   cursor: pointer;
   background-color: #ff9494;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.5rem;
 }
 

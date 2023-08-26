@@ -4,7 +4,7 @@ import { BsPencil } from "react-icons/bs";
 import styles from "../assets/styles/Tolltip.module.css";
 import checkoboxIcon from "../assets/images/checkoboxIcon.svg";
 import unchecked from "../assets/images/unchecked.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ITask } from "../interfaces/Task";
 
 const TaskList = ({
@@ -12,14 +12,14 @@ const TaskList = ({
   handleDeleteTask,
   handleEditTask,
 }: TaskListType) => {
-  const [selectedItems, setSelectedItems] = useState<ITask[]>([]);
-  console.log(selectedItems);
+  const [selectedTask, setSelectedItems] = useState<ITask[]>([]);
+  console.log(selectedTask);
 
-  const toggleItemSelection = (task: ITask): void => {
-    if (selectedItems.includes(task)) {
-      setSelectedItems(selectedItems.filter((selected) => selected !== task));
+  const toogleCheckboxIcon = (task: ITask): void => {
+    if (selectedTask.includes(task)) {
+      setSelectedItems(selectedTask.filter((selected) => selected !== task));
     } else {
-      setSelectedItems([...selectedItems, task]);
+      setSelectedItems([...selectedTask, task]);
     }
   };
 
@@ -30,11 +30,11 @@ const TaskList = ({
             <div
               key={index}
               onClick={() => {
-                toggleItemSelection(task);
+                toogleCheckboxIcon(task);
               }}
               className={`tasks-container`}
               style={{
-                textDecoration: selectedItems.includes(task)
+                textDecoration: selectedTask.includes(task)
                   ? "line-through"
                   : "none",
               }}
@@ -59,9 +59,9 @@ const TaskList = ({
               <span className="checkbox">
                 <img
                   src={`${
-                    selectedItems.includes(task) ? checkoboxIcon : unchecked
+                    selectedTask.includes(task) ? checkoboxIcon : unchecked
                   }`}
-                  alt=""
+                  alt="checkbox-icon"
                 />
               </span>
             </div>
