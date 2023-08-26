@@ -13,8 +13,6 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  padding-top: 10rem;
-
   justify-content: center;
   align-content: center;
 }
