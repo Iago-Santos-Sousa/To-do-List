@@ -18,6 +18,7 @@ const TaskForm = ({
   // console.log(typeof setTaskList);
 
   const handlers: HandleType = {
+    // lógica para substituir if/else
     updateTask: () => {
       // altera tarefa
       if (handleUpdateTask) {
@@ -74,7 +75,9 @@ const TaskForm = ({
             name="title"
             placeholder="Sua tarefa"
             value={title}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setTitle(e.target.value)
+            }
           />
         </div>
         <button type="submit">{btnText}</button>

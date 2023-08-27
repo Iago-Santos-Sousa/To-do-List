@@ -1,3 +1,4 @@
+import ListIcon from "./components/ListIcon";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import Modal from "./components/modal/Modal";
@@ -30,6 +31,9 @@ function App() {
         }
       />
       <main>
+        <>
+          <ListIcon />
+        </>
         <>
           <TaskForm
             btnText="Adicionar"
