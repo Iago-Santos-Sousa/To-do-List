@@ -46,7 +46,7 @@ body {
     background-color: $app-background-color;
     & main {
       @extend %container-width;
-      padding: 1rem 0;
+      padding: 1rem 0 2.5rem;
     }
   }
 }

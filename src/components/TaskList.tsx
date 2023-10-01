@@ -50,7 +50,6 @@ const TaskList = ({
         ? taskList.map((task, index) => (
             <div
               key={index}
-              onClick={() => toggleSelectedTask(task.id)}
               className={`tasks-container`}
               style={{
                 textDecoration: selectedTask.includes(task.id)
@@ -75,7 +74,10 @@ const TaskList = ({
                   </i>
                 </span>
               </div>
-              <span className="checkbox">
+              <span
+                className="checkbox"
+                onClick={() => toggleSelectedTask(task.id)}
+              >
                 <img
                   src={`${
                     selectedTask.includes(task.id) ? checkoboxIcon : unchecked
